@@ -4,7 +4,7 @@
 cron = require('cron').CronJob
 
 module.exports = (robot) ->
-  new cron '0 0 10,20 * * *', () ->
+  new cron '0 0 10,20 15 * *', () ->
     user = {room: '#general'}
     message = '勤怠の提出日です'
     robot.send user, message
