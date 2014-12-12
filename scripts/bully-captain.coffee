@@ -17,7 +17,7 @@ bully_say = [
 ]
 
 module.exports = (robot) ->
-  new cron '0 0 21 1-31/2 * *', () ->
+  new cron '0 0 21 */2 * *', () ->
     user = {room: '#test'}
     imageMe robot, 'ブリー隊長', (url) ->
       robot.send user, url
