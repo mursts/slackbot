@@ -23,7 +23,7 @@ module.exports = (robot) ->
     month = today.getMonth() + 1
 
     if month % 3 != 0
-      user = {room: '#test'}
+      user = {room: '#general'}
       imageMe robot, 'ブリー隊長', (url) ->
         robot.send user, url
   , null, true, "Asia/Tokyo"
