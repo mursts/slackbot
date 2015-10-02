@@ -17,10 +17,15 @@ bully_say = [
 ]
 
 module.exports = (robot) ->
-  new cron '0 0 21 1-31/2 * *', () ->
-    user = {room: '#test'}
-    imageMe robot, 'ブリー隊長', (url) ->
-      robot.send user, url
+  new cron '0 0 21 * * *', () ->
+
+    today = new Data
+    month = today.getMonth() + 1
+
+    if month % 3 != 0
+      user = {room: '#test'}
+      imageMe robot, 'ブリー隊長', (url) ->
+        robot.send user, url
   , null, true, "Asia/Tokyo"
 
 imageMe = (robot, query, callback) ->
