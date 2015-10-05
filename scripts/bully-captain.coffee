@@ -19,7 +19,7 @@ bully_say = [
 module.exports = (robot) ->
   new cron '0 0 21 * * *', () ->
 
-    today = new Data
+    today = new Date()
     month = today.getMonth() + 1
 
     if month % 3 != 0
