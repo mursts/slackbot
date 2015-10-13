@@ -20,9 +20,9 @@ module.exports = (robot) ->
   new cron '0 0 21 * * *', () ->
 
     today = new Date()
-    month = today.getMonth() + 1
+    day = today.getDate()
 
-    if month % 3 != 0
+    if day % 3 != 0
       user = {room: '#general'}
       imageMe robot, 'ブリー隊長', (url) ->
         robot.send user, url
