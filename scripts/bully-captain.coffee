@@ -22,7 +22,7 @@ module.exports = (robot) ->
     today = new Date()
     day = today.getDate()
 
-    if day % 3 != 0
+    if day % 3 != 0 and day != 31
       user = {room: '#general'}
       imageMe robot, 'ブリー隊長', (url) ->
         robot.send user, url
